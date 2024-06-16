@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Home page</title>
+
+    <style>
+        /* Custom CSS for middle title */
+        
+        
+        .footer.hello{
+			text-align: center;
+		}
+        .middle-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /* Custom CSS for heading */
+        .main-heading {
+            font-weight: bold;
+            font-size: 6rem;
+            color: rgb(255, 0, 0); /* Change color as needed */
+            overflow: hidden; /* Prevent letters from showing up before animation */
+            white-space: nowrap; /* Keep the letters in a single line */
+            animation: animate 5s steps(100, end) infinite; /* 10 steps, each lasting 0.2s */
+        }
+
+        @keyframes animate {
+            0% {
+                width: 0; /* Initially, no width */
+            }
+            100% {
+                width: 100%; /* After 2 seconds, full width */
+            }
+        }
+
+        /* Custom CSS for footer */
+        .footer {
+            background-color: rgb(0, 128, 255);
+            color: white;
+            padding: 14px 0;
+            text-align: center;
+            position: fixed;
+            bottom: -100px; /* Initially hide the footer */
+            width: 100%;
+            transition: bottom 0.3s ease-in-out; /* Add smooth transition */
+        }
+
+        /* Additional styling for footer content */
+        .footer p {
+            margin-bottom: 5px;
+        }
+
+        .footer .social-links li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .footer .social-links li a {
+            color: white;
+        }
+
+        /* Show footer when user scrolls down */
+        body.show-footer .footer {
+            bottom: 0;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 10px 0;
+            }
+            .footer .social-links li {
+                margin-right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Emp Sphere</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/m">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">List </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="addemp">Add Emp</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/aboutl">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Middle Title -->
+<div class="middle-title">
+    <h1 class="main-heading">Welcome to EMPSPHERE</h1>
+    <p>Your Employee Management Solution</p>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Contact Us</h4>
+                <p>Email: empshere@gmail.com</p>
+                <p>Phone: +1234567890</p>
+              
+            </div>
+            <div class="col-md-6">
+                <h4>Connect With Us</h4>
+                <ul class="social-links">
+                    <li><a href="https://twitter.com/empsphere" target="_blank">Twitter</a></li>
+                    <li><a href="https://facebook.com/empsphere" target="_blank">Facebook</a></li>
+                    <li><a href="https://linkedin.com/company/empsphere" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p>&copy; 2024 Emp Sphere. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        
+    </div>
+    
+</footer>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-ckpyUKC/GCvyScpbXtVTK1I0MopkgcDKv6qrO8ziiRSJoBAu4eWHZZND6pOV9fAL" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    // Show footer when user scrolls down
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.body.classList.add("show-footer");
+        } else {
+            document.body.classList.remove("show-footer");
+        }
+    }
+</script>
+
+</body>
+</html>
